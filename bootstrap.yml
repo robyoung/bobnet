@@ -1,0 +1,8 @@
+---
+
+- name: "Bootstrap disk images"
+  hosts: all
+  tasks:
+    - shell: "uname"
+  roles:
+    - bobnet-bootstrap

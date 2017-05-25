@@ -1,0 +1,10 @@
+
+bobnet_tls_certificates:
+  - filename: "bobnet.robyoung.digital.private.pem"
+    content: "{{ bobnet_priv_key }}"
+  - filename: "bobnet.robyoung.digital.chain.pem"
+    content: "{{ bobnet_cert_chain }}"
+  - filename: "admin.robyoung.digital.private.pem"
+    content: "{{ admin_priv_key }}"
+  - filename: "admin.robyoung.digital.chain.pem"
+    content: "{{ admin_cert_chain }}"

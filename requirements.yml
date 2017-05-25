@@ -1,0 +1,11 @@
+---
+
+- name: bobnet-bootstrap
+  src: git@github.com:robyoung/bobnet-bootstrap-role.git
+  scm: git
+  version: master
+
+- name: bobnet
+  src: git@github.com:robyoung/bobnet-role.git
+  scm: git
+  version: master

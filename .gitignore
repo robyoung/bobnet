@@ -1,0 +1,6 @@
+roles
+images
+/*.log
+/*.retry
+.vagrant
+/etc-hosts

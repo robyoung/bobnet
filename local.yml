@@ -1,0 +1,34 @@
+---
+
+- name: "Manage ssh client config"
+  hosts: localhost
+  connection: local
+  tasks:
+    - debug: var=bobnet_hosts
+    - blockinfile:
+        path: "~/.ssh/config"
+        marker: "# {mark} BobNet hosts"
+        content: "{{ lookup('template', 'templates/ssh_config.j2') }}"
+
+- name: "Manage hosts file"
+  hosts: localhost
+  connection: local
+  tasks:
+    - copy:
+        src: /etc/hosts
+        dest: ./etc-hosts
+        remote_src: true
+    - blockinfile:
+        path: "./etc-hosts"
+        marker: "# {mark} BobNet hosts"
+        content: "{{ lookup('template', 'templates/hosts.j2') }}"
+
+- name: "Manage shell profile"
+  hosts: localhost
+  connection: local
+  tasks:
+    - blockinfile:
+        path: "{{ profile_path }}"
+        create: true
+        marker: "# {mark} BobNet"
+        content: "{{ lookup('template', 'templates/profile.j2') }}"

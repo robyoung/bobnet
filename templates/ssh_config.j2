@@ -1,0 +1,25 @@
+#jinja2: trim_blocks:False
+
+Host{% for host in bobnet_hosts %} {{ host }}.local {{ host }}{% endfor %}
+  User ansible
+  IdentityFile {{ identity_file }}
+
+Host {{ jumpbox }}.local
+  Hostname {{ bobnet_networking[jumpbox].eth1_ipv4_address }}
+
+Host {{ jumpbox }}
+  Hostname {{ bobnet_networking[jumpbox].public_ipv4_address }}
+
+{% for host in bobnet_hosts if host != jumpbox %}
+Host {{ host }}.local {{ host }}
+  Hostname {{ bobnet_networking[host].eth0_ipv4_address }}
+{% endfor %}
+
+Host{% for host in bobnet_hosts if host != jumpbox %} {{ host }}{% endfor %}
+  # Jump through {{ jumpbox }} on the public ip
+  ProxyJump {{ jumpbox }}
+
+Host{% for host in bobnet_hosts if host != jumpbox %} {{ host }}.local{% endfor %}
+  # Jump through {{ jumpbox }} on the local ip
+  ProxyJump {{ jumpbox }}.local
+

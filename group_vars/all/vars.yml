@@ -1,0 +1,51 @@
+---
+
+# Bootstrap
+bobnet_os: "hypriot"
+
+bobnet_wifi_ssid: "{{ vault_wifi_ssid }}"
+bobnet_wifi_passphrase: "{{ vault_wifi_passphrase }}"
+
+bobnet_ansible_user_password: "{{ vault_ansible_user_password }}"
+bobnet_ansible_user_public_key: "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBADiVCCV5iHIxbaZpsux95F7PqMQij4E62H3uMQz1in/TccCv7ecoefL3eLp2VjUnySQsikvYyPaFkjjIM/dmHf9ggH50o1oomOUS5w2EH67ugYoEtyGo4EAgLmuYmWLNk9V/vmnq/IS/x90gjZTPYJFnICIXJ0EAhnO9hHH5yni0u5KsQ== ansible"
+
+bobnet_hosts:
+  - bob01
+  - bob02
+  - bob03
+
+bobnet_networking:
+  bob01:
+    public_ipv4_address: "{{ vault_public_ipv4_address }}"
+    eth1_ipv4_address: "192.168.0.20"
+    eth0_ipv4_address: "169.10.10.1"
+
+  bob02:
+    eth0_ipv4_address: "169.10.10.2"
+
+  bob03:
+    eth0_ipv4_address: "169.10.10.3"
+
+
+# Bobnet
+bobnet_swarm_labels:
+  - host: "bob01"
+    labels:
+      - "role=dmz"
+
+bobnet_swarm_manager: "bob02"
+
+bobnet_tls_certificates: []
+
+bobnet_cert_chain: "{{ vault_bobnet_cert_chain }}"
+bobnet_priv_key: "{{ vault_bobnet_priv_key }}"
+
+admin_cert_chain: "{{ vault_admin_cert_chain }}"
+admin_priv_key: "{{ vault_admin_priv_key }}"
+
+
+# Local
+identity_file: "~/.ssh/id_ecdsa"
+additional_vhosts: "{{ vault_additional_vhosts }}"
+jumpbox: "bob01"
+profile_path: "~/.zprofile"

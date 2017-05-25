@@ -1,0 +1,6 @@
+---
+
+- name: "Configure Bobnet nodes"
+  hosts: all
+  roles:
+    - bobnet

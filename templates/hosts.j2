@@ -1,0 +1,9 @@
+{% for host in bobnet_hosts %}
+{% if bobnet_networking[host].eth1_ipv4_address is defined %}
+{{ bobnet_networking[host].eth1_ipv4_address }} {{ host }}
+{% endif %}
+{% endfor %}
+
+{% for host in additional_vhosts %}
+{{ bobnet_networking[host.host].eth1_ipv4_address }} {{ host.vhost }}
+{% endfor %}

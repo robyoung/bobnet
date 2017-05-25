@@ -1,0 +1,12 @@
+bob01
+bob02
+bob03
+
+[dmz]
+bob01
+
+[router]
+bob01
+
+[wireless_ap]
+bob03
