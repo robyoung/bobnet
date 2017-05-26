@@ -2,6 +2,11 @@
 
 Bootstrap and configure the nodes in bobnet.
 
+## Dependencies
+
+- [Bobnet Bootstrap Role](https://github.com/robyoung/bobnet-bootstrap-role)
+- [Bobnet Configure Role](https://github.com/robyoung/bobnet-configure-role)
+
 ## Usage
 
 1. Install role dependencies `make roles`
