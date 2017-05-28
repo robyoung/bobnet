@@ -5,7 +5,7 @@
   scm: git
   version: master
 
-- name: bobnet
-  src: git@github.com:robyoung/bobnet-role.git
+- name: bobnet-configure
+  src: git@github.com:robyoung/bobnet-configure-role.git
   scm: git
   version: master
