@@ -3,7 +3,7 @@
 roles:
 	ansible-galaxy install -r requirements.yml -p roles
 
-bootstrap:
+bootstrap: roles
 	vagrant up --provision
 
 configure: roles
