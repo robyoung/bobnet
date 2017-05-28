@@ -13,6 +13,7 @@ bobnet_hosts:
   - bob01
   - bob02
   - bob03
+  - bob04
 
 bobnet_networking:
   bob01:
@@ -25,6 +26,9 @@ bobnet_networking:
 
   bob03:
     eth0_ipv4_address: "169.10.10.3"
+
+  bob04:
+    eth0_ipv4_address: "169.10.10.4"
 
 
 # Bobnet
