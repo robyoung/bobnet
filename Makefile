@@ -1,7 +1,7 @@
-.PHONY: roles bootstrap configure local
+SHELL := /bin/bash
 
 roles:
-	ansible-galaxy install -r requirements.yml -p roles
+	@[ -z "$$BOBNET_NO_ROLES" ] && ansible-galaxy install -r requirements.yml -p roles || true
 
 bootstrap: roles
 	vagrant up --provision
@@ -17,3 +17,5 @@ docker-connect:
 
 docker-close:
 	@echo "Run: . ./tools/close-docker-socket.sh"
+
+.PHONY: roles bootstrap configure local
