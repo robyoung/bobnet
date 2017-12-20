@@ -4,3 +4,13 @@
   hosts: all
   roles:
     - bobnet-configure
+
+- name: "Configure Bobnet swarm nodes"
+  hosts: swarm
+  roles:
+    - bobnet-docker-swarm
+
+- name: "Configure Bobnet sensor nodes"
+  hosts: sense
+  roles:
+    - bobnet-sensor

@@ -4,9 +4,12 @@
   hosts: localhost
   connection: local
   tasks:
-    - debug: var=bobnet_hosts
+    - copy:
+        src: "~/.ssh/config"
+        dest: ./ssh-config
+        remote_src: true
     - blockinfile:
-        path: "~/.ssh/config"
+        path: "./ssh-config"
         marker: "# {mark} BobNet hosts"
         content: "{{ lookup('template', 'templates/ssh_config.j2') }}"
 

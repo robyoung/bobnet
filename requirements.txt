@@ -1,0 +1,4 @@
+# pin to version before ask-vault-pass got broken
+# https://github.com/ansible/ansible/issues/30993
+# https://github.com/hashicorp/vagrant/issues/9033
+ansible==2.3.2

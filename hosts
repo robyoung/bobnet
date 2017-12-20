@@ -2,6 +2,8 @@ bob01
 bob02
 bob03
 bob04
+sense01
+sense02
 
 [dmz]
 bob01
@@ -11,3 +13,13 @@ bob01
 
 [wireless_ap]
 bob03
+
+[swarm]
+bob01
+bob02
+bob03
+bob04
+
+[sense]
+sense01
+sense02

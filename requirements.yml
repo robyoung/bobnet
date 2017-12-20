@@ -1,11 +1,11 @@
 ---
 
 - name: bobnet-bootstrap
-  src: git@github.com:robyoung/bobnet-bootstrap-role.git
+  src: git@github.com:robyoung/bobnet-role-bootstrap.git
   scm: git
   version: master
 
 - name: bobnet-configure
-  src: git@github.com:robyoung/bobnet-configure-role.git
+  src: git@github.com:robyoung/bobnet-role-configure.git
   scm: git
   version: master

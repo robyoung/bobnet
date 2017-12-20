@@ -3,7 +3,6 @@
 bobnet_locale: "en_GB.UTF-8"
 
 # Bootstrap
-bobnet_os: "hypriot"
 
 bobnet_wifi_ssid: "{{ vault_wifi_ssid }}"
 bobnet_wifi_passphrase: "{{ vault_wifi_passphrase }}"
@@ -12,10 +11,22 @@ bobnet_ansible_user_password: "{{ vault_ansible_user_password }}"
 bobnet_ansible_user_public_key: "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBADiVCCV5iHIxbaZpsux95F7PqMQij4E62H3uMQz1in/TccCv7ecoefL3eLp2VjUnySQsikvYyPaFkjjIM/dmHf9ggH50o1oomOUS5w2EH67ugYoEtyGo4EAgLmuYmWLNk9V/vmnq/IS/x90gjZTPYJFnICIXJ0EAhnO9hHH5yni0u5KsQ== ansible"
 
 bobnet_hosts:
+  # Bobnet
   - bob01
   - bob02
   - bob03
   - bob04
+  # Sensors
+  - sense01
+  - sense02
+
+bobnet_oses:
+  bob01: hypriot
+  bob02: hypriot
+  bob03: hypriot
+  bob04: hypriot
+  sense01: raspbian
+  sense02: raspbian
 
 bobnet_networking:
   bob01:
@@ -31,6 +42,12 @@ bobnet_networking:
 
   bob04:
     eth0_ipv4_address: "169.10.10.4"
+
+  sense01:
+    eth1_ipv4_address: "192.168.0.31"
+
+  sense02:
+    eth1_ipv4_address: "192.168.0.33"
 
 
 # Bobnet

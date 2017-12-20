@@ -12,7 +12,11 @@ Host {{ jumpbox }}
 
 {% for host in bobnet_hosts if host != jumpbox %}
 Host {{ host }}.local {{ host }}
+{%- if bobnet_networking[host].eth0_ipv4_address is defined %}
   Hostname {{ bobnet_networking[host].eth0_ipv4_address }}
+{%- else %}
+  Hostname {{ bobnet_networking[host].eth1_ipv4_address }}
+{%- endif %}
 {% endfor %}
 
 Host{% for host in bobnet_hosts if host != jumpbox %} {{ host }}{% endfor %}
