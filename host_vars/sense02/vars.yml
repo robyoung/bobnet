@@ -1,0 +1,4 @@
+---
+
+bobnet_sensors_config: "bobnet_sensors/sense02.config.yml"
+bobnet_sensors_private_key: "{{ vault_bobnet_sensors_private_key }}"

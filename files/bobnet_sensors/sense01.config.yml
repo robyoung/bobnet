@@ -1,0 +1,12 @@
+sensors:
+    counter:
+      device: counter
+      every: 5m
+
+iotcore:
+    region:           europe-west1
+    project_id:       rob-young-digital
+    registry_id:      bobnet
+    device_id:        sense01
+    private_key_path: /etc/bobnet/sensors-private.pem
+    ca_certs_path:    /etc/bobnet/google-roots.pem

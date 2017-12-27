@@ -1,0 +1,22 @@
+sensors:
+  envirophat:
+    device: envirophat
+    every: 5m
+    sensors:
+      - light.rgb
+      - sensor: light.light
+        label: light
+      - sensor: weather.temperature
+        label: temperature
+      - sensor: weather.pressure
+        label: pressure
+      - sensor: weather.altitude
+        label: altitude
+
+iotcore:
+    region:           europe-west1
+    project_id:       rob-young-digital
+    registry_id:      bobnet
+    device_id:        sense02
+    private_key_path: /etc/bobnet/sensors-private.pem
+    ca_certs_path:    /etc/bobnet/google-roots.pem
