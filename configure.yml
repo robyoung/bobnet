@@ -1,10 +1,5 @@
 ---
 
-- name: "Configure Bobnet nodes"
-  hosts: all
-  roles:
-    - bobnet-configure
-
 - name: "Configure Bobnet swarm nodes"
   hosts: swarm
   roles:
