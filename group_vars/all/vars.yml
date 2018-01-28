@@ -55,6 +55,9 @@ bobnet_swarm_labels:
   - host: "bob01"
     labels:
       - "role=dmz"
+  - host: "bob04"
+    labels:
+      - "role=data"
 
 bobnet_swarm_manager: "bob02"
 

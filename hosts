@@ -11,6 +11,12 @@ bob01
 [router]
 bob01
 
+[data]
+bob04
+
+[swarm_manager]
+bob02
+
 [wireless_ap]
 bob03
 
