@@ -1,0 +1,6 @@
+---
+
+bobnet_disks:
+  - uuid: 930B-35F0
+    target: /mnt/data
+    fstype: vfat
