@@ -1,6 +1,8 @@
 ---
 
 bobnet_disks:
-  - uuid: 930B-35F0
+  - uuid: e974e9dc-fc9d-406a-a1d8-23b12f9dcd6f
     target: /mnt/data
-    fstype: vfat
+    fstype: ext4
+    subdirs:
+      - postgres
