@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "ansible" do |ansible|
     ansible.ask_vault_pass = true
     ansible.verbose = "1"
-    ansible.playbook = "bootstrap.yml"
+    ansible.playbook = "playbooks/bootstrap.yml"
     ansible.galaxy_roles_path = "roles"
   end
 end

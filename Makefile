@@ -7,10 +7,10 @@ bootstrap: roles
 	vagrant up --provision
 
 configure: roles
-	ansible-playbook --ask-vault-pass configure.yml
+	ansible-playbook --vault-password-file <(pass p/bobnet/vault) playbooks/configure.yml
 
 local: roles
-	ansible-playbook --ask-vault-pass local.yml
+	ansible-playbook --vault-password-file <(pass p/bobnet/vault) playbooks/local.yml
 
 docker-connect:
 	@echo "Run: . ./tools/set-docker-socket.sh"
